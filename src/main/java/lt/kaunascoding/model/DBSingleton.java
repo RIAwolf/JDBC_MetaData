@@ -33,17 +33,6 @@ public class DBSingleton {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
-        try {
-            Statement statement= connection.createStatement();
-            ResultSet resultSet= statement.executeQuery("SELECT * FROM `user`;");
-            while(resultSet.next()){
-                System.out.println(resultSet.getString(1)+ " "+resultSet.getString(2));
-
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
     }
 
     public void printQueryResult(String query){
