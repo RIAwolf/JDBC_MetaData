@@ -1,10 +1,23 @@
 package lt.kaunascoding;
 
-import lt.kaunascoding.view.DBView;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
-public class MainFacade {
-    public static void main (String[] args){
-        DBView objektas = new DBView();
-        objektas.dirbam();
+public class MainFacade extends Application {
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("sample.fxml"));
+        primaryStage.setTitle("Hello World");
+        primaryStage.setScene(new Scene(root, 640, 480));
+        primaryStage.show();
+    }
+
+
+    public static void main(String[] args) {
+        launch(args);
     }
 }
